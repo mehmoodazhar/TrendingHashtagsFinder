@@ -1,0 +1,41 @@
+{%extends 'base.html' %}
+
+{% block head %}
+<title>Find out trending Hashtags of Twitter</title>
+<link rel="stylesheet" href ="{{ url_for('static',filename='css/style.css')}}" >
+{% endblock %}
+
+{%block body%}
+<h1>USE VPN FOR BETTER RESULTS | OR TRY TO CHANGE BROWSER</h1>
+
+<form action="" method="POST">
+    <input class="input" type="search" name ="sc" placeholder="Find Top Trending Hashtags of any country">
+    <input class="submit" type="submit" value="Submit">
+</form>
+<br/>
+<br/>
+<br/>
+<h1>Country Searched for: {{get_country_name}}</h1>
+<table>
+  <caption>Twitter Trends - {{unable_to_find}}
+</caption>
+  <thead>
+    <tr>
+         <th scope="col">Tweet Volume</th>
+      <th scope="col">Trending Topic / Hashtag</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {%for volume in total_volume%}
+          <td scope="row" data-label="volume">{{volume}}</td>
+      {%endfor%}
+
+      {%for trending in topic%}
+        <td scope="row" data-label="volume">{{trending}}</td>
+      {%endfor%}
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

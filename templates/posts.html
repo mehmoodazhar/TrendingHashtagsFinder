@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+
+{% block head%}<title>All posts</title> {% endblock %}
+
+{%block body%}
+<h1>All posts</h1>
+
+    {% for post in posts%}
+        <h1>{{post.Name}}</h1>
+         {%if post.Name == "Azhar Mahmood" %}
+            <p>{{post.Name}} You are Selected</p>
+         {%else%}
+            <p>{{post.Name}}</p>
+         {%endif%}
+    {% endfor%}
+
+
+
+<!--#body ends here-->
+{%endblock%}
+
